@@ -7,7 +7,13 @@ public class AdvanceByOffsets {
   @EpiTest(testDataFile = "advance_by_offsets.tsv")
   public static boolean canReachEnd(List<Integer> maxAdvanceSteps) {
     // TODO - you fill in here.
-    return true;
+    int furthestSoFar = 0;
+    int lastIndex = maxAdvanceSteps.size()-1;
+
+    for(int i = furthestSoFar; furthestSoFar<lastIndex && i<=furthestSoFar; i++){
+      furthestSoFar = Math.max(furthestSoFar, i+maxAdvanceSteps.get(i));
+    }
+    return furthestSoFar>=lastIndex;
   }
 
   public static void main(String[] args) {
